@@ -1,0 +1,188 @@
+Handson 9 - Hash Map
+
+1)program
+
+
+package com.day8;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+class Handson8{
+	
+static double calculateAverage(double sum, int count) {
+	return (double)sum/count;
+}
+}
+
+
+public class UserMainCode1 {
+	
+	public static void main(String[] args) {
+	Map<Integer,Double> m=new HashMap<>(); 
+	Scanner sc =new Scanner(System.in);
+	System.out.println("enter s value");
+	int s=sc.nextInt();
+	double sum=0;
+	int count=0;
+	System.out.println("enter key value pairs");
+for(int i=0;i<s;i++) {
+	m.put(sc.nextInt(), sc.nextDouble());
+	
+}
+Set<Integer> s1=m.keySet();
+Iterator itr=s1.iterator();
+while(itr.hasNext()) {
+	Integer i=(Integer)itr.next();
+	if(i%2!=0) {
+		sum +=m.get(i);
+		count++;
+}
+	}
+Handson8 h=new Handson8();
+double avg=h.calculateAverage(sum,count);
+System.out.printf("%.2f",avg);
+	}
+}
+
+
+
+
+2)progarm
+
+
+
+package com.day8;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Map;
+import java.util.Set;
+class ClassMain2{
+	private static HashMap hm;
+
+	static int AfterDelete(HashMap hm) {
+		int k, count=hm.size();
+		Set s=hm.entrySet();
+		Iterator itr =s.iterator();
+		while(itr.hasNext()) {
+			Map.Entry me=(Map.Entry)itr.next();
+			int l=(Integer)me.getKey();
+			if(  l%3 != 0)
+				count--;
+		}
+
+		return count;
+	}
+	}
+
+
+public class UserMainCode {
+	
+	public static void main(String[] args) {
+		HashMap<Integer, String> hm=new HashMap<>();
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter input");
+		int n=in.nextInt();
+
+		ClassMain2 c= new ClassMain2(); 
+		for(int i=0;i<n;i++) {
+			hm.put(in.nextInt(),in.next());
+			
+		}
+System.out.println(UserMainCode.AfterDelete(hm));
+	}
+
+	private static char[] AfterDelete(HashMap<Integer, String> hm) {
+		
+		return null;
+	}
+
+	
+}
+
+	
+
+3)program
+
+
+package com.day8;
+
+import java.util.Scanner;
+import java.util.TreeMap;
+
+
+class Main3{
+	static String getmax(TreeMap t) {
+		String s=(String) t.get(t.lastKey());
+		
+		return s;
+	}
+}
+public class UserMainCode3 {
+
+	public static void main(String[] args) {
+		
+		TreeMap<Integer, String> hm=new TreeMap<>();
+		Scanner sc=new Scanner(Sysytem.in);
+		System.out.println("input");
+		int i= sc.nextInt();
+		Main3 m =new Main3();
+		for(int s=0;s<i;s++) {
+			hm.put(sc.nextInt(),sc.next());
+			
+		}
+		System.out.println(m.getmax(hm));
+
+	}
+
+}
+
+
+4)program
+
+
+
+package com.day8;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+public class UserMainCode4 {
+public static void main(String[] args) {
+		LinkedHashMap<String,String> hm=new LinkedHashMap<>();
+		Scanner s= new Scanner(System.in);
+		System.out.println("enter  number of key valu pairs");
+		int n=s.nextInt();
+		System.out.println("enter details");
+		for(int i=0;i<n;i++) {
+			
+			hm.put(s.next(),s.next());
+		}
+		System.out.println(hm);
+		System.out.println("enter designation");
+	    String user=s.next();
+		
+	    Set s1=hm.keySet();
+	    Iterator itr=s1.iterator();
+	    
+	    while(itr.hasNext()) {
+	    	String str = (String)itr.next();
+	    	String des= hm.get(str);
+	    	if(des.equals(user)) {
+	    		System.out.println(str);
+	    	
+	    	}
+	    }
+
+	}
+
+}
+
+
